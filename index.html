@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Inventory Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Inventory Management System</h1>
+        </header>
+
+        <!-- Add Supplier Details-->
+        <div class="supplier-details">
+            <h2>Supplier Info</h2>
+            <form id="supplierForm">
+
+                <label for="idofsupplier">Supplier ID</label>
+                <input type="text" id="idofsupplier" required>
+
+                <label for="supplierName">Supplier Name:</label>
+                <input type="text" id="supplierName" required>
+
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" required>
+
+                <label for="supplierEmail">Email:</label>
+                <input type="email" id="supplierEmail" required>
+
+                <label for="supplierPhone">Phone Number:</label>
+                <input type="tel" id="supplierPhone" required>
+
+                <button type="button" id="supplierSubmit">Submit</button>
+            </form>
+        </div>
+
+        <div class="item-list" id="supplierList">
+            <table id="SupplierListTable">
+                <thead>
+                    <tr>
+                        <th>Supplier ID</th>
+                        <th>Supplier Name</th>
+                        <th>Contact Info</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                </thead>
+                <tbody id="supplierListTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add Inventory Item Form -->
+        <div class="add-item">
+            <h2>Inventory Item</h2>
+            <form id="addProductForm">
+                <label for="inventorySupplierId">Supplier ID</label>
+                <input type="text" id="inventorySupplierId" required>
+
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" required>
+
+                <label for="itemCategory">Category:</label>
+                <input type="text" id="itemCategory" required>
+
+                <label for="itemQuantity">Quantity:</label>
+                <input type="number" id="itemQuantity" required>
+
+                <label for="itemPrice">Price:</label>
+                <input type="number" id="itemPrice" required>
+
+                <button type="submit">Add Inventory Item</button>
+            </form>
+        </div>
+        <div class="item-list">
+            <h2>Item List</h2>
+            <table id="itemListTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ItemName</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+
+                    </tr>
+                </thead>
+                <tbody id="itemListTableBody">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- Update Inventory Price Form -->
+        <div class="update-item">
+            <h2>Update Item</h2>
+            <form id="updateInventoryForm">
+                <label for="updateItemId">Item ID:</label>
+                <input type="text" id="updateItemId" required>
+
+                <label for="newPrice">New Price:</label>
+                <input type="number" id="newPrice" required>
+
+                <button type="button" id="updateBtn">Update Inventory Price</button>
+            </form>
+        </div>
+        <div class="item-list" id="updateItemList">
+            <h2>Updated List</h2>
+            <table id="updateItemListTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ItemName</th>
+                        <th>Price</th>
+
+                </thead>
+                <tbody id="updateItemListTableBody">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- View Inventory by Category Form -->
+        <div class="view-inventory">
+            <h2>View Inventory</h2>
+            <form id="viewCategoryForm">
+                <label for="viewCategory">Category:</label>
+                <input type="text" id="viewCategory" required>
+
+                <button type="submit" id="viewInventory">View Inventory</button>
+            </form>
+        </div>
+        <div class="item-list" id="viewItemList">
+            <table id="viewItemListTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ItemName</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+
+                </thead>
+                <tbody id="ViewItemListTableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Generate Inventory Supplier Report Button -->
+        <button class="generate">Generate Supplier Report</button>
+        <div id="report-body"></div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
